@@ -130,7 +130,7 @@ setup_blank_influxdb_with_http() {
     --read-only \
     -v "$INFLUXDB_MOUNT_PATH"/influxdb2/data:/var/lib/influxdb2 \
     -v "$INFLUXDB_MOUNT_PATH"/influxdb2/config:/etc/influxdb2 \
-    influxdb:2.0.9
+    influxdb:2.7
 }
 
 provision_influxdb(){
@@ -174,7 +174,7 @@ provision_influxdb(){
       -v "$INFLUXDB_MOUNT_PATH"/influxdb2_certs/:/etc/ssl/greengrass:ro \
       -e INFLUXD_TLS_CERT=/etc/ssl/greengrass/influxdb.crt \
       -e INFLUXD_TLS_KEY=/etc/ssl/greengrass/influxdb.key \
-      influxdb:2.0.9
+      influxdb:2.7
 
       wait_for_influxdb_start "$CONTAINER_NAME" "$INFLUXDB_PORT" "$SERVER_PROTOCOL" "$SKIP_TLS_VERIFY"
   else

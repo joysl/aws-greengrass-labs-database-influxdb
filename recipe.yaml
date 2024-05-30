@@ -107,6 +107,6 @@ Manifests:
           echo "Removing the InfluxDB container..."
           docker rm {configuration:/InfluxDBContainerName}
     Artifacts:
-      - URI: 'docker:influxdb:2.0.9' 
+      - URI: 'docker:influxdb:2.7' 
       - URI: s3://aws-greengrass-labs-database-influxdb.zip
         Unarchive: ZIP
